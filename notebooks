@@ -1,0 +1,24 @@
+# Exploratory Data Analysis
+
+This notebook performs exploratory data analysis on the merchant onboarding forms dataset.
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load data
+data = pd.read_csv('../data/sample_data.csv')
+
+# Basic data inspection
+print(data.head())
+print(data.info())
+
+# Plot form type distribution
+form_type_counts = data['form_type'].value_counts()
+form_type_counts.plot(kind='bar')
+plt.title('Form Type Distribution')
+plt.xlabel('Form Type')
+plt.ylabel('Count')
+plt.show()
+
+# More EDA as needed...
